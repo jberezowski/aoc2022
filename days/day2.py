@@ -29,5 +29,5 @@ class Day2(Task):
 
 if __name__ == '__main__':
     input_file_name = "../data/input2.txt"
-    day1 = Day1(input_file_name)
-    day1.print_solution()
+    day = Day2(input_file_name)
+    day.print_solution()
