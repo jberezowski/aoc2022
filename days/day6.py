@@ -18,7 +18,7 @@ class Day6(Task):
     @staticmethod
     def search_list_for_unique_window(l, window_size):
         for i in range(window_size, len(l)):
-            window = list(set(l[i - window_size: i]))
+            window = set(l[i - window_size: i])
             if len(window) == window_size:
                 return i
 
