@@ -15,9 +15,9 @@ class Day10(Task):
         commands = self.get_commands(self.task_input)
 
         relevant_signals = np.array(list(range(20, 222, 40)))
-        state_values = [1]
-        scheduled = 1
-        for clock in range(0, 220):
+        state_values = []
+        scheduled = 0
+        for clock in range(1, 220):
             val = state_values[-1] if len(state_values) > 0 else 1
             if scheduled <= clock:
                 delta_time, delta_val = commands.pop()
@@ -30,10 +30,10 @@ class Day10(Task):
         screen_size = 240
         row_size = 40
         commands = self.get_commands(self.task_input)
-        state_values = [1]
-        scheduled = 1
-        screen = ["."]
-        for clock in range(0, screen_size):
+        state_values = []
+        scheduled = 0
+        screen = []
+        for clock in range(1, screen_size):
             val = state_values[-1] if len(state_values) > 0 else 1
             screen.append("#" if 0 <= (clock % row_size) - val < 3 else ".")
             if scheduled <= clock:
